@@ -1,7 +1,9 @@
 from django.db import models
 
-# Create your models here.
+from userApp.models import Usuario
 
+# Create your models here.
+"""
 class Alumno(models.Model):
     dni = models.IntegerField(default=0)
     nombre = models.CharField(max_length=15)
@@ -10,9 +12,9 @@ class Alumno(models.Model):
 
     def __str__(self):
         return self.nombre
-
+"""
 #----------------
-
+"""
 class Docente(models.Model):
     dni = models.IntegerField(default=0)
     nombre = models.CharField(max_length=15)
@@ -20,7 +22,7 @@ class Docente(models.Model):
 
     def __str__(self):
         return self.nombre
-
+"""
 #----------------
 
 class Area(models.Model):
@@ -35,8 +37,8 @@ class Curso(models.Model):
     nombre = models.CharField(max_length=50)
     
     #alumno = models.ForeignKey(Alumno, on_delete=models.CASCADE)
-    docente = models.ForeignKey(Docente, on_delete=models.CASCADE)
-    area = models.ForeignKey(Area, on_delete=models.CASCADE)
+    docente = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    area = models.ForeignKey(Area, on_delete=models.CASCADE, unique=True)
 
     #nota_Final = models.IntegerField(default=0)
 
@@ -46,8 +48,8 @@ class Curso(models.Model):
 #----------------
 
 class CursoMatriculado(models.Model):
-    alumno = models.ForeignKey(Alumno, on_delete=models.CASCADE)
-    curso = models.ForeignKey(Curso, on_delete=models.CASCADE)
+    alumno = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    curso = models.ForeignKey(Curso, on_delete=models.CASCADE, unique=True)
 
     nota_Final = models.IntegerField(default=0)
 

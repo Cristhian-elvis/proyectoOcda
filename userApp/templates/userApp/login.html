@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <form action="/your-name/" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+</body>
+</html>
+
+
+<!--
+<form method="post">
+    {% csrf_token %}
+    <div class="py-2">
+        <div class="relative text-left">
+            <input
+            type="text"
+            class="label-issuing border outline-none w-full p-3.5 rounded-lg focus:border-blue-500"
+            name="username"
+            badinput="false"
+            autofocus
+        />
+        <div
+            class="px-2 label-receiver absolute pointer-events-none text-gray-500 z-10"
+        >
+            Nombre de usuario o correo electrónico
+        </div>
+        </div>
+    </div>
+    <div class="py-2">
+        <div class="relative text-left">
+            <input
+                type="password"
+                class="label-issuing border outline-none w-full p-3.5 rounded-lg focus:border-blue-500"
+                name="password1"
+                badinput="false"
+            />
+            <div
+                class="px-2 label-receiver absolute pointer-events-none text-gray-500 z-10"
+            >
+                Contraseña
+            </div>
+        </div>
+        
+        <div class="py-2 text-right text-sm text-blue-500">
+            <a href="#" class="hover:underline">Olvidaste tu contraseña?</a>
+        </div>
+    </div>
+    <div class="py-2">
+        <button
+            type="submit"
+            class="bg-blue-500 w-full p-2 rounded-lg hover:bg-blue-600 focus:outline-none"
+        >
+            <span class="text-white font-bold tracking-wider"
+                >INICIAR SESIÓN</span
+            >
+        </button>
+    </div>
+</form>
+-->
+

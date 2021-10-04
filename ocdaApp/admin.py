@@ -3,10 +3,10 @@ from django.contrib import admin
 from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 
-from ocdaApp.models import Alumno, Area, Curso, CursoMatriculado, Docente, Nota
+from ocdaApp.models import  Area, Curso, CursoMatriculado, Nota
 
 # Register your models here.
-
+"""
 class AlumnoResource(resources.ModelResource):
     class Meta:
         model = Alumno
@@ -39,7 +39,7 @@ class DocenteAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     )
 
     resource_class = DocenteResource
-
+"""
 #---------------
 
 class AreaResource(resources.ModelResource):
